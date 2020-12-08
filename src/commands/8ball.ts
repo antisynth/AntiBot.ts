@@ -50,7 +50,11 @@ export default class _8ball extends Command {
             "Outlook not so good.",
             "Very doubtful.",
         ]
-        const random_index = responses[Math.floor(Math.random()*(responses.length)-1)]
+        let random_index = responses[Math.floor(Math.random()*(responses.length)-1)]
+
+        if (random_index == 'undefined') {
+            random_index = 'Yes.'
+        }
 
         const embed = new MessageEmbed()
             .setTitle('Magic 8ball')
