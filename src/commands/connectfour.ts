@@ -1,7 +1,7 @@
 import { Command } from 'discord-akairo';
 import { Message, MessageEmbed, GuildMember } from 'discord.js';
 
-export default class connect4 extends Command {
+export default class Connect4 extends Command {
     constructor() {
         super('connectfour', {
             aliases: ['connectfour', 'connect4', 'c4'],

@@ -1,7 +1,7 @@
 import { Command } from 'discord-akairo';
 import { Message, GuildMember, MessageEmbed } from 'discord.js';
 
-export default class gayrate extends Command {
+export default class Gayrate extends Command {
     constructor() {
         super('gayrate', {
             aliases: ['gayrate', 'howgay'],

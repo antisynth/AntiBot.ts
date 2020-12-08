@@ -2,7 +2,7 @@ import { Command } from 'discord-akairo';
 import { Message, MessageEmbed } from 'discord.js';
 const random_puppy = require('random-puppy');
 
-export default class meme extends Command {
+export default class Meme extends Command {
     constructor() {
         super('meme', {
             aliases: ['meme', 'cringe'],

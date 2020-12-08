@@ -2,7 +2,7 @@ import { Command } from 'discord-akairo';
 import { Message, MessageEmbed, GuildMember } from 'discord.js';
 import { promises } from 'fs';
 
-export default class rate extends Command {
+export default class Rate extends Command {
     constructor() {
         super('rate', {
             aliases: ['rate'],

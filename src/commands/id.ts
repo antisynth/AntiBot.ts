@@ -1,7 +1,7 @@
 import { Command } from 'discord-akairo';
 import { Message, MessageEmbed, GuildMember } from 'discord.js';
 
-export default class id extends Command {
+export default class ID extends Command {
     constructor() {
         super('id', {
             aliases: ['id', 'getid'],

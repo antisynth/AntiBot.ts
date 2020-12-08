@@ -1,7 +1,7 @@
 import { Command } from 'discord-akairo';
 import { Message } from 'discord.js';
 
-export default class coinflip extends Command {
+export default class Coinflip extends Command {
     constructor() {
         super('coinflip', {
             aliases: ['coinflip', 'flipcoin'],
