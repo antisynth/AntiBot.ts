@@ -204,8 +204,7 @@ export default class Snake extends Command {
                     if (Head.x + 2 > startBoard[0].length) return die();
                     break;
                 case "❌":
-                    die();
-                    break;
+                    return die();
             }
 
             const newData = renderBoard();
