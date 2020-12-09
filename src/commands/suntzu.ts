@@ -20,12 +20,19 @@ export default class SunTzu extends Command {
                     id: 'text',
                     type: 'string',
                     match: 'rest'
+                },
+                {
+                    id: 'quotes',
+                    type: 'string',
+                    match: 'option',
+                    flag: '-QUOTES=',
+                    default: 'TRUE'
                 }
             ]
         });
     }
 
-    public async exec(message: Message, { text }: { text: string[] }): Promise<Message> {
+    public async exec(message: Message, { text, quotes }: { text: string[], quotes: string }): Promise<Message> {
         const canvas = Canvas.createCanvas(801, 447)
         const ctx = canvas.getContext('2d')
 
@@ -80,9 +87,14 @@ export default class SunTzu extends Command {
                 text[306] = text[306] + '\n'
             }
             let newText = Array.prototype.join.call(text, "")
-            let finalText = `"${newText}"`
+            if (quotes == "TRUE") { 
+                let finalText = `"${newText}"` 
+                ctx.fillText(finalText, 250, 50 + 90)
+            } else if (quotes == "FALSE") {
+                let finalText = `${newText}`
+                ctx.fillText(finalText, 250, 50 + 90)
+            }
             //if (text.includes('undefined')) text.replace('undefined', ' ')
-            ctx.fillText(finalText, 250, 50 + 90)
             ctx.font = '35px sans-serif'
             ctx.fillText('- Sun Tzu, The Art of War', 250, 300 + 20)
 
