@@ -73,40 +73,41 @@ export default class Say extends Command {
 	
 	public exec(message: Message, { text }: { text: string }) {
 		message.delete();
-		message.util.send(text); // oh yeah btw you use message.util.send, not message.channel.send
+		message.util.send(text); /* oh yeah btw you use message.util.send, not message.channel.send */
 	}
 }
 ```
+
 ## Creating issues
 ### Format
-Command syntax
-What the command does
-Why should this be added
-Examples
+Command syntax  
+What the command does  
+Why should this be added  
+Examples  
 
 #### Command syntax
-Show me what the valid command syntax looks like by entering the command name, followed by any arguments the command needs.
-An example of this would be:
-"!say text"
-Don't surround your arguments with <>, because markdown is weird and just deletes anything inside of those.
+Show me what the valid command syntax looks like by entering the command name, followed by any arguments the command needs.  
+An example of this would be:  
+"!say text"  
+Don't surround your arguments with <>, because markdown is weird and just deletes anything inside of those.  
 
 #### What the command does
-Make sure your description of what the command does is at least somewhat detailed.
-An example of this would be:
-"The user can input whatever they want after !say, and then the bot will delete the message when the command is executed and repeats what the user inputted in another message."
+Make sure your description of what the command does is at least somewhat detailed.  
+An example of this would be:  
+"The user can input whatever they want after !say, and then the bot will delete the message when the command is executed and repeats what the user inputted in another message."  
 
 #### Why should this be added
-Tell me what purpose your issue serves. Why is it a good addition to the bot? Is it useful (if it's a fun command ignore this)?
-An example of this would be:
+Tell me what purpose your issue serves. Why is it a good addition to the bot? Is it useful (if it's a fun command ignore this)?  
+An example of this would be:  
 "This command serves the purpose of funny screenshots. It is a good addition to the bot because if someone is bored and wants to laugh, they can make the bot say funny stuff and entertain them. It's not useful, but that's fine because this is a fun command."
 
 #### Examples
-If your issue isn't about adding a new command, you can probably ignore this.
-Else, add some text (or images) demonstrating how this command works in practice.
-An example of this would be:
-"Example of the say command:
-!say Hello, World!
-Command message gets deleted.
-Bot: Hello, World!". Once that's done, **Congrats! You've just made an issue that I'll consider!**
+If your issue isn't about adding a new command, you can probably ignore this.  
+Else, add some text (or images) demonstrating how this command works in practice.  
+An example of this would be:  
+"Example of the say command:  
+!say Hello, World!  
+Command message gets deleted.  
+Bot: Hello, World!". Once that's done, **Congrats! You've just made an issue that I'll consider!**  
 
 # Fin
