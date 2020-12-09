@@ -1,7 +1,6 @@
 const Canvas = require('canvas')
 import { Message, MessageAttachment } from 'discord.js';
 const path = require('path')
-import { prefix } from '../Config';
 import { Command } from 'discord-akairo';
 
 export default class SunTzu extends Command {
