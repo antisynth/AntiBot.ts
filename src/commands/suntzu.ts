@@ -35,7 +35,7 @@ export default class SunTzu extends Command {
     public async exec(message: Message, { text, quotes }: { text: string[], quotes: string }): Promise<Message> {
         const canvas = Canvas.createCanvas(801, 447)
         const ctx = canvas.getContext('2d')
-
+        
         const background = await Canvas.loadImage(
             path.join(__dirname, '../files/wallpaper.jpg')
         )
