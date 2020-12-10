@@ -14,7 +14,7 @@ export default class UwUify extends Command {
                     'uwu Hello, World!'
                 ]
             },
-            ratelimit: 3,
+            ratelimit: 1,
             args: [
                 {
                     id: 'text',

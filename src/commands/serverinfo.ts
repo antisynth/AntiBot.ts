@@ -18,7 +18,7 @@ export default class ServerInfo extends Command {
                     'server-info'
                 ]
             },
-            ratelimit: 3
+            ratelimit: 1
         });
     }
 

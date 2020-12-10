@@ -15,7 +15,7 @@ export default class Avatar extends Command {
                     'avatar antisynth'
                 ]
             },
-            ratelimit: 3,
+            ratelimit: 1,
             args: [
                 {
                     id: 'user',

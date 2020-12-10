@@ -12,7 +12,7 @@ export default class _8ball extends Command {
                     '8ball is this command gonna work?'
                 ]
             },
-            ratelimit: 3,
+            ratelimit: 1,
             args: [
                 {
                     id: 'question',

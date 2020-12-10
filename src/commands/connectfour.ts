@@ -14,7 +14,7 @@ export default class Connect4 extends Command {
                     'c4 antisynth'
                 ]
             },
-            ratelimit: 3,
+            ratelimit: 1,
             args: [
                 {
                     id: 'user',

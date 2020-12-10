@@ -15,7 +15,7 @@ export default class UserInfo extends Command {
                     'user-info antisynth'
                 ]
             },
-            ratelimit: 3,
+            ratelimit: 1,
             args: [
                 {
                     id: 'user',

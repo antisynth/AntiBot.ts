@@ -12,7 +12,7 @@ export default class Ping extends Command {
                     'ping'
                 ]
             },
-            ratelimit: 3
+            ratelimit: 1
         });
     }
 

@@ -14,7 +14,7 @@ export default class Meme extends Command {
                     'cringe'
                 ]
             },
-            ratelimit: 3
+            ratelimit: 1
         });
     }
 

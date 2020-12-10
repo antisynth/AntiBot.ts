@@ -14,7 +14,7 @@ export default class Rate extends Command {
                     'rate antisynth'
                 ]
             },
-            ratelimit: 3,
+            ratelimit: 1,
             args: [
                 {
                     id: 'user',

@@ -14,7 +14,7 @@ export default class SunTzu extends Command {
                     'suntzu This command\'s not gonna work.'
                 ]
             },
-            ratelimit: 3,
+            ratelimit: 1,
             args: [
                 {
                     id: 'text',
@@ -47,61 +47,61 @@ export default class SunTzu extends Command {
         ctx.font = '30px sans-serif'
         x = canvas.width / 2 - ctx.measureText(text).width / 2
         if (text.length > 30) {
-                text = [...text]
-                text[36] = text[36] + '\n'
-            }
-            if (text.length > 60) {
-                text = [...text]
-                text[66] = text[66] + '\n'
-            }
-            if (text.length > 90) {
-                text = [...text]
-                text[96] = text[96] + '\n'
-            }
-            if (text.length > 120) {
-                text = [...text]
-                text[126] = text[126] + '\n'
-            }
-            if (text.length > 150) {
-                text = [...text]
-                text[156] = text[156] + '\n'
-            }
-            if (text.length > 180) {
-                text = [...text]
-                text[186] = text[186] + '\n'
-            }
-            if (text.length > 210) {
-                text = [...text]
-                text[216] = text[216] + '\n'
-            }
-            if (text.length > 240) {
-                text = [...text]
-                text[246] = text[246] + '\n'
-            }
-            if (text.length > 270) {
-                text = [...text]
-                text[276] = text[276] + '\n'
-            }
-            if (text.length > 300) {
-                text = [...text]
-                text[306] = text[306] + '\n'
-            }
-            let newText = Array.prototype.join.call(text, "")
-            if (quotes == "TRUE") { 
-                let finalText = `"${newText}"` 
-                ctx.fillText(finalText, 250, 50 + 90)
-            } else if (quotes == "FALSE") {
-                let finalText = `${newText}`
-                ctx.fillText(finalText, 250, 50 + 90)
-            }
-            //if (text.includes('undefined')) text.replace('undefined', ' ')
-            ctx.font = '35px sans-serif'
-            ctx.fillText('- Sun Tzu, The Art of War', 250, 300 + 20)
+            text = [...text]
+            text[36] = text[36] + '\n'
+        }
+        if (text.length > 60) {
+            text = [...text]
+            text[66] = text[66] + '\n'
+        }
+        if (text.length > 90) {
+            text = [...text]
+            text[96] = text[96] + '\n'
+        }
+        if (text.length > 120) {
+            text = [...text]
+            text[126] = text[126] + '\n'
+        }
+        if (text.length > 150) {
+            text = [...text]
+            text[156] = text[156] + '\n'
+        }
+        if (text.length > 180) {
+            text = [...text]
+            text[186] = text[186] + '\n'
+        }
+        if (text.length > 210) {
+            text = [...text]
+            text[216] = text[216] + '\n'
+        }
+        if (text.length > 240) {
+            text = [...text]
+            text[246] = text[246] + '\n'
+        }
+        if (text.length > 270) {
+            text = [...text]
+            text[276] = text[276] + '\n'
+        }
+        if (text.length > 300) {
+            text = [...text]
+            text[306] = text[306] + '\n'
+        }
+        let newText = Array.prototype.join.call(text, "")
+        if (quotes == "TRUE") { 
+            let finalText = `"${newText}"` 
+            ctx.fillText(finalText, 250, 50 + 90)
+        } else if (quotes == "FALSE") {
+            let finalText = `${newText}`
+            ctx.fillText(finalText, 250, 50 + 90)
+        }
+        //if (text.includes('undefined')) text.replace('undefined', ' ')
+        ctx.font = '35px sans-serif'
+        ctx.fillText('- Sun Tzu, The Art of War', 250, 300 + 20)
 
-            const attachment = new MessageAttachment(canvas.toBuffer())
-            return message.util.send(
-                '',
-                attachment
-                )
+        const attachment = new MessageAttachment(canvas.toBuffer())
+        return message.util.send(
+            '',
+            attachment
+            )
     }
 }
