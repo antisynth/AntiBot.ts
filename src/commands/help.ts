@@ -63,7 +63,7 @@ export default class Help extends Command {
             )
         }
 
-        const embed = new MessageEmbed()
+/*         const embed = new MessageEmbed()
             .setAuthor(`Help with ${this.client.user.username}`, this.client.user.displayAvatarURL())
             .setFooter(`${this.client.commandHandler.prefix}help <command> for more help with a certain command`)
 
@@ -77,6 +77,6 @@ export default class Help extends Command {
                 )
         }
 
-        return message.util.send(embed);
+        return message.util.send(embed); */
     }
 }
