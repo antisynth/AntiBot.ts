@@ -45,6 +45,7 @@ export default class Help extends Command {
             .setDescription(stripIndents`
                 **8ball
                 avatar
+                clickbait
                 coinflip
                 connectfour
                 gayrate
