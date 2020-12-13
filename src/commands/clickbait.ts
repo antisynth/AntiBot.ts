@@ -129,7 +129,13 @@ export default class Clickbait extends Command {
             if (send2 == undefined || send2 == 'undefined') {
                 let send3 = generateClickbait()
                 if (send3 == undefined || send2 == 'undefined') {
-                    return
+                    let send4 = generateClickbait()
+                    if (send4 == undefined || send4 == 'undefined') {
+                        console.log('L')
+                        return
+                    } else {
+                        return message.util.send(`${send4}`)
+                    }
                 } else {
                     return message.util.send(`${send3}`)
                 }

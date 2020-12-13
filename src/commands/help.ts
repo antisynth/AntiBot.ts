@@ -29,6 +29,8 @@ export default class Help extends Command {
             return message.util.send(new MessageEmbed()
             .setAuthor(`Help with ${command}`, this.client.user.displayAvatarURL())
             .setDescription(stripIndents`
+                **Aliases:**
+                ${command.aliases.join().replace(/,/g, ', ') || "Unknown"}
                 **Description:**
                 ${command.description.content || "Unknown"}
                 **Usage:**
