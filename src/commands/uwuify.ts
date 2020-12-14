@@ -49,7 +49,7 @@ export default class UwUify extends Command {
         const temp_uwuized_message = UwUify(text)
 
         if (temp_uwuized_message.length > 2000) {
-            fs.writeFile('../files/uwuify.txt', UwUify(text), (err) => {
+            fs.writeFile('./files/uwuify.txt', UwUify(text), (err) => {
                 if (err) throw new Error(err)
             })
 
@@ -57,7 +57,7 @@ export default class UwUify extends Command {
                 'Your string was too long, so I made a file containing your uwu-ified text for you!', {
                     files: [
                         {
-                            attachment: 'C:\\Users\\Administrator\\Desktop\\CODING\\AntiBot.ts\\src\\files\\uwuify.txt'
+                            attachment: 'C:\\Users\\Administrator\\Documents\\Github\\AntiBot\\src\\files\\uwuify.txt'
                         }
                     ]
                 }
