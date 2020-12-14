@@ -12,7 +12,7 @@ export default class Coinflip extends Command {
                     'coinflip'
                 ]
             },
-            ratelimit: 1
+            ratelimit: 0
         });
     }
 

@@ -14,7 +14,7 @@ export default class Gayrate extends Command {
                     'howgay antisynth'
                 ]
             },
-            ratelimit: 1,
+            ratelimit: 0,
             args: [
                 {
                     id: 'user',

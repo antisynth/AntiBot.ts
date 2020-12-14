@@ -14,7 +14,7 @@ export default class SunTzu extends Command {
                     'suntzu This command\'s not gonna work.'
                 ]
             },
-            ratelimit: 1,
+            ratelimit: 0,
             args: [
                 {
                     id: 'text',

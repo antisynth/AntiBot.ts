@@ -13,7 +13,7 @@ export default class Snake extends Command {
                     'snek'
                 ]
             },
-            ratelimit: 1
+            ratelimit: 0
         });
     }
 

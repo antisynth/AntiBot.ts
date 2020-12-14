@@ -14,7 +14,7 @@ export default class ID extends Command {
                     'id antisynth'
                 ]
             },
-            ratelimit: 1,
+            ratelimit: 0,
             args: [
                 {
                     id: 'user',

@@ -13,7 +13,7 @@ export default class Clickbait extends Command {
                     'shitpost'
                 ]
             },
-            ratelimit: 1
+            ratelimit: 0
         })
     }
 

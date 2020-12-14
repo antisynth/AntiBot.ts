@@ -13,7 +13,7 @@ export default class Help extends Command {
                     'help ping'
                 ]
             },
-            ratelimit: 1,
+            ratelimit: 0,
             args: [
                 {
                     id: 'command',
