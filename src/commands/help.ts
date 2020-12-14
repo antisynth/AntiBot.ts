@@ -1,6 +1,7 @@
 import { Command } from 'discord-akairo';
 import { Message, MessageEmbed } from 'discord.js';
 import { stripIndents } from 'common-tags';
+import pagination from 'discord.js-pagination'
 
 export default class Help extends Command {
     constructor() {
@@ -40,28 +41,84 @@ export default class Help extends Command {
             `)
             )
         } else {
-            return message.util.send(new MessageEmbed()
-            .setTitle('Commands')
-            .setDescription(stripIndents`
-                **8ball
-                avatar
-                clickbait
-                coinflip
-                connectfour
-                gayrate
-                help
-                id
-                meme
-                ping
-                rate
-                serverinfo
-                snake
-                suntzu
-                userinfo
-                uwuify**
-            `)
-            .setFooter('Use !help <command> to get more info about it')
+            const util = new MessageEmbed()
+            .setTitle('Utility')
+            .setDescription('Use !help <command> to get info on it')
+            .addField('!**avatar**', '_ _', true)
+            .addField('!**help**', '_ _', true)
+            .addField('!**id**', '_ _', true)
+            .addField('!**ping**', '_ _', true)
+            .addField('!**serverinfo**', '_ _', true)
+            .addField('!**userinfo**', '_ _', true)
+            .setTimestamp()
+
+            const fun = new MessageEmbed()
+            .setTitle('Fun')
+            .setDescription('Use !help <command> to get info on it')
+            .addFields(
+                {
+                    name: '!**8ball**',
+                    value: '_ _',
+                    inline: true
+                },
+                {
+                    name: '!**clickbait**',
+                    value: '_ _',
+                    inline: true
+                },
+                {
+                    name: '!**coinflip**',
+                    value: '_ _',
+                    inline: true
+                },
+                {
+                    name: '!**connectfour**',
+                    value: '_ _',
+                    inline: true
+                },
+                {
+                    name: '!**gayrate**',
+                    value: '_ _',
+                    inline: true
+                },
+                {
+                    name: '!**meme**',
+                    value: '_ _',
+                    inline: true
+                },
+                {
+                    name: '!**rate**',
+                    value: '_ _',
+                    inline: true
+                },
+                {
+                    name: '!**snake**',
+                    value: '_ _',
+                    inline: true
+                },
+                {
+                    name: '!**suntzu**',
+                    value: '_ _',
+                    inline: true
+                },
+                {
+                    name: '!**uwuify**',
+                    value: '_ _',
+                    inline: true
+                }
             )
+            .setTimestamp()
+
+            const pages = [
+                util,
+                fun
+            ]
+
+            const emojiList = ['⬅️', '➡️']
+
+            const timeout = '30000'
+
+            pagination(message, pages, emojiList, timeout)
         }
 
 /*         const embed = new MessageEmbed()
