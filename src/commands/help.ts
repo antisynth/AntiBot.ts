@@ -2,6 +2,7 @@ import { Command } from 'discord-akairo';
 import { Message, MessageEmbed } from 'discord.js';
 import { stripIndents } from 'common-tags';
 import pagination from 'discord.js-pagination'
+import { prefix } from '../Config'
 
 export default class Help extends Command {
     constructor() {
@@ -57,52 +58,52 @@ export default class Help extends Command {
             .setDescription('Use !help <command> to get info on it')
             .addFields(
                 {
-                    name: '!**8ball**',
+                    name: `${prefix}**8ball**`,
                     value: '_ _',
                     inline: true
                 },
                 {
-                    name: '!**clickbait**',
+                    name: `${prefix}**clickbait**`,
                     value: '_ _',
                     inline: true
                 },
                 {
-                    name: '!**coinflip**',
+                    name: `${prefix}**coinflip**`,
                     value: '_ _',
                     inline: true
                 },
                 {
-                    name: '!**connectfour**',
+                    name: `${prefix}**connectfour**`,
                     value: '_ _',
                     inline: true
                 },
                 {
-                    name: '!**gayrate**',
+                    name: `${prefix}**gayrate**`,
                     value: '_ _',
                     inline: true
                 },
                 {
-                    name: '!**meme**',
+                    name: `${prefix}**meme**`,
                     value: '_ _',
                     inline: true
                 },
                 {
-                    name: '!**rate**',
+                    name: `${prefix}**rate**`,
                     value: '_ _',
                     inline: true
                 },
                 {
-                    name: '!**snake**',
+                    name: `${prefix}**snake**`,
                     value: '_ _',
                     inline: true
                 },
                 {
-                    name: '!**suntzu**',
+                    name: `${prefix}**suntzu**`,
                     value: '_ _',
                     inline: true
                 },
                 {
-                    name: '!**uwuify**',
+                    name: `${prefix}**uwuify**`,
                     value: '_ _',
                     inline: true
                 }
