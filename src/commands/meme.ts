@@ -18,16 +18,24 @@ export default class Meme extends Command {
         });
     }
 
-    public async exec(message: Message): Promise<Message> {
+    public async exec(message: Message) {
         const subreddits = ["meme", "me_irl", "photoshopbattles", "crappyoffbrands", "PerfectTiming", "BrandNewSentence"]
         const random = subreddits[Math.floor(Math.random() * subreddits.length)]
         const image = await random_puppy(random)
         
+        const loadingEmbed = new MessageEmbed()
+            .setTitle('Loading...')
+            .setTimestamp()
+
         const embed = new MessageEmbed()
             .setTitle(`From /r/${random}`)
             .setImage(image)
             .setURL(`http://reddit.com/${random}`)
             .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
-        return message.util.send(embed)
+            .setTimestamp()
+
+        message.util.send(loadingEmbed).then(msg => {
+            msg.edit('', { embed: embed })
+        })
     }
 }
