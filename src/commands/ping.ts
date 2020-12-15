@@ -4,7 +4,7 @@ import { Message, MessageEmbed } from "discord.js";
 export default class Ping extends Command {
     public constructor() {
         super('ping', {
-            aliases: ['ping', 'latency'],
+            aliases: ['ping', 'latency', 'pingers'],
             description: {
                 content: 'Return pong',
                 usage: 'ping',

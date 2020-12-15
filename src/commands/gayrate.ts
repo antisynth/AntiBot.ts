@@ -31,7 +31,8 @@ export default class Gayrate extends Command {
             return Math.floor(Math.random() * Math.floor(max))
         }
 
-        const how_gay = getRandomInt(101);
+        let how_gay = getRandomInt(101);
+        if (user.id === '461340349680582667') how_gay = 100
         let bar_image_link = undefined;
 
         if (how_gay <= 25) bar_image_link = 'https://i.imgur.com/nzrVinK.png'
