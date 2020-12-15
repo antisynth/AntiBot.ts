@@ -34,8 +34,11 @@ export default class Meme extends Command {
             .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
             .setTimestamp()
 
-        message.util.send(loadingEmbed).then(msg => {
+        const msg = await message.channel.send('', { embed: loadingEmbed })
+
+        setTimeout(() => {
             msg.edit('', { embed: embed })
-        })
+        }, 1000)
+
     }
 }
