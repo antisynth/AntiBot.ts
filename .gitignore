@@ -104,3 +104,4 @@ dist
 .tern-port
 src/Config.ts
 src/Config.ts
+src/files/db.json

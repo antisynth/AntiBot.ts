@@ -67,14 +67,19 @@ export default class Clickbait extends Command {
             switch (usertheme) {
                 case 'GAMING':
                     theme = gaming
+                    break
                 case 'CONTACT':
                     theme = contacting
+                    break
                 case 'CHALLENGE':
                     theme = challenge
+                    break
                 case 'EXPOSE':
                     theme = exposing
+                    break
                 default:
                     theme = theme
+                    break
             }
 
             if (theme === gaming) {
@@ -105,7 +110,7 @@ export default class Clickbait extends Command {
 
             if (theme === contacting) {
                 let contactList1 = ["calling", "meeting", "inviting over", "facetiming", "summoning"]
-		        let contactList2 = ["Elmo", "Barney", "Santa Claus", "Pennywise", "Thanos", "Scooby Doo", "Shrek", "Your Mom", "Dream Minecraft"]
+		        let contactList2 = ["Elmo", "Barney", "Santa Claus", "Pennywise", "Thanos", "Scooby Doo", "Shrek", "Your Mom", "Dream Minecraft", "a furry"]
 		        let contactList3 = ["at 3AM!", "at midnight!", "at 1AM!", "at night!", "in the middle of nowhere!"]
 		        let contactList4 = ["(scary)", "(omg he came)", "(intense)", "(cops called)", "(don't try this at home)", "(crazy)", "(gone sexual)", "(like and sub for free bobux)"]
                 
@@ -131,7 +136,7 @@ export default class Clickbait extends Command {
 
             if (theme === challenge) {
                 let challengeList1 = ["buying", "selling", "eating", "stealing"]
-                let challengeList2 = ["everything in the store", "all of my parent's belongings", "everything I can hold", "everything green", "everything orange", "everything blue", "everything red"]
+                let challengeList2 = ["everything in the store", "all of my parent's belongings", "everything I can hold", "everything green", "everything orange", "everything blue", "everything red", "everything black"]
                 let challengeList3 = ["- challenge", "- super hard challenge", "- expensive challenge", "- impossible challenge", "- crazy challenge (almost died)"]
                 let challengeList4 = ["(intense)", "(near-death moments)", "(extremely dangerous)", "(nsfw)", "(crazy)", "(almost impossible)", "(gone sexual)", "(free giftcard giveaway in description)"]
                 
@@ -159,7 +164,7 @@ export default class Clickbait extends Command {
                 let expose = "exposing"
                 let exposeList1 = ["dream for", "george not found for", "antisynth for", "Joe Biden for", "your mom for", "my parents for"]
                 let exposeList2 = ["not letting me stay up past my bedtime", "saying h*ck", "calling me gay", "saying I'm dumb", "being toxic", "being cringe"]
-                let exposeList3 = ["- confirmed", "- screenshots", "- cringe"]
+                let exposeList3 = ["- confirmed", "- screenshots", "- cringe", "- video"]
                 let exposeList4 = ["(nsfw)", "(almost got doxed)", "(bad words)", "(insane moments)", "(could've died)"]
                 
                 if (exposecaps === true) {
