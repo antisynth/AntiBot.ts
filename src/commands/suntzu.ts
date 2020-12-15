@@ -33,6 +33,8 @@ export default class SunTzu extends Command {
     }
 
     public async exec(message: Message, { text, quotes }: { text: string[], quotes: string }): Promise<Message> {
+        if (TypeError) return message.util.send('Error! Make sure you\'re entering text to display.')
+        
         const canvas = Canvas.createCanvas(801, 447)
         const ctx = canvas.getContext('2d')
         
