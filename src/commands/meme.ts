@@ -50,21 +50,21 @@ export default class Meme extends Command {
                 msg.edit('', { embed: embed });
             }
             ["👍", "👎"].forEach(async el => msg.react(el));
-            const filter = (reaction, user) => ["👍", "👎"].includes(reaction.emoji.name) && user.id === message.author.id; 
-            const response = await msg.awaitReactions(filter, { max: 1 });
-            const reaction = response.first();
-            if (reaction.emoji.name === '👎') {
-                if (reaction.count >= 5) {
-                    msg.edit('', { embed: dislikeEmbed })
-                    msg.reactions.removeAll()
-                    const fsPromises = fs.promises
-                    const data = JSON.parse(await fsPromises.readFile('./files/db.json', 'utf8'))
-                    data[image] = true
-                    await fsPromises.writeFile('./files/db.json', JSON.stringify(data, null, 2))
-                } else {
-                    // pass
+            // const filter = (reaction, user) => ["👍", "👎"].includes(reaction.emoji.name) && user.id === message.author.id; 
+            // const response = await msg.awaitReactions(filter, { max: 1, time: 30 });
+            // const reaction = response.first();
+            this.client.on('messageReactionAdd', async (reaction) => {
+                if (reaction.emoji.name === '👎') {
+                    if (reaction.count >= 5) {
+                        msg.edit('', { embed: dislikeEmbed })
+                        msg.reactions.removeAll()
+                        const fsPromises = fs.promises
+                        const data = JSON.parse(await fsPromises.readFile('./files/db.json', 'utf8'))
+                        data[image] = true
+                        await fsPromises.writeFile('./files/db.json', JSON.stringify(data, null, 2))
+                    }
                 }
-            }
+            })
         }, 1000)
 
     }
