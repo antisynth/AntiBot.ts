@@ -13,19 +13,29 @@ export default class Clickbait extends Command {
                     'shitpost'
                 ]
             },
-            ratelimit: 0
+            ratelimit: 0,
+            args: [
+                {
+                    id: 'usertheme',
+                    type: 'string',
+                    match: 'option',
+                    flag: ['-THEME='],
+                    default: null
+                }
+            ]
         })
     }
 
-    public exec(message: Message) {
+    public exec(message: Message, { usertheme }: { usertheme: string }) {
         const gaming = '1'
         const contacting = '2'
         const challenge = '3'
+        const exposing = '4'
 
         // const cap = '4'
         // const nocap = '5'
 
-        const themeList = [gaming, contacting, challenge]
+        const themeList = [gaming, contacting, challenge, exposing]
         // const yes = 'yes'
         // const no = 'no'
         // let repeat = ''
@@ -33,7 +43,7 @@ export default class Clickbait extends Command {
         const capsList = [true, false]
 
         function generateClickbait() {
-            const theme = themeList[Math.floor(Math.random()*(themeList.length)-1)]
+            let theme = themeList[Math.floor(Math.random()*(themeList.length)-1)]
             const gaming1caps = capsList[Math.floor(Math.random()*(capsList.length))]
             const gaming2caps = capsList[Math.floor(Math.random()*(capsList.length))]
             const gaming3caps = capsList[Math.floor(Math.random()*(capsList.length))]
@@ -48,11 +58,30 @@ export default class Clickbait extends Command {
             const challenge2caps = capsList[Math.floor(Math.random()*(capsList.length))]
             const challenge3caps = capsList[Math.floor(Math.random()*(capsList.length))]
 
+            const exposecaps = capsList[Math.floor(Math.random()*(capsList.length))]
+            const expose1caps = capsList[Math.floor(Math.random()*(capsList.length))]
+            const expose2caps = capsList[Math.floor(Math.random()*(capsList.length))]
+            const expose3caps = capsList[Math.floor(Math.random()*(capsList.length))]
+            const expose4caps = capsList[Math.floor(Math.random()*(capsList.length))]
+
+            switch (usertheme) {
+                case 'GAMING':
+                    theme = gaming
+                case 'CONTACT':
+                    theme = contacting
+                case 'CHALLENGE':
+                    theme = challenge
+                case 'EXPOSE':
+                    theme = exposing
+                default:
+                    theme = theme
+            }
+
             if (theme === gaming) {
-                let gamingList1 = ["beating", "winning against", "I got killed by", "I won with", "I won against"]
-                let gamingList2 = ["the best player ever", "a famous youtuber", "the president", "an asian gamer"]
+                let gamingList1 = ["beating", "winning against", "I got killed by", "I won with", "I won against", "I found a hacker with", "speedrunning with", "replicating minecraft manhunt against"]
+                let gamingList2 = ["the best player ever", "a famous youtuber", "the president", "an asian gamer", "your fat fucking mom"]
                 let gamingList3 = ["in Minecraft!", "in Overwatch!", "in Call of Duty!", "in Roblox!", "in Fortnite!"]
-                let gamingList4 = ["(intense)", "(ultra gamer)", "(so close)", "(omg)", "(pro)"]
+                let gamingList4 = ["(intense)", "(ultra gamer)", "(so close)", "(omg)", "(pro)", "(gone sexual)", "(watch until the end)"]
 
                 let gaming1 = gamingList1[Math.floor(Math.random()*(gamingList1.length))]
                 if (gaming1caps === true) {
@@ -75,10 +104,10 @@ export default class Clickbait extends Command {
             }
 
             if (theme === contacting) {
-                let contactList1 = ["calling", "meeting", "inviting over"]
-		        let contactList2 = ["Elmo", "Barney", "Santa Claus", "Pennywise", "Thanos", "Scooby Doo", "Shrek"]
-		        let contactList3 = ["at 3AM!", "at midnight!", "at 1AM!", "at night!"]
-		        let contactList4 = ["(scary)", "(omg he came)", "(intense)", "(cops called)", "(don't try this at home)", "(crazy)"]
+                let contactList1 = ["calling", "meeting", "inviting over", "facetiming", "summoning"]
+		        let contactList2 = ["Elmo", "Barney", "Santa Claus", "Pennywise", "Thanos", "Scooby Doo", "Shrek", "Your Mom", "Dream Minecraft"]
+		        let contactList3 = ["at 3AM!", "at midnight!", "at 1AM!", "at night!", "in the middle of nowhere!"]
+		        let contactList4 = ["(scary)", "(omg he came)", "(intense)", "(cops called)", "(don't try this at home)", "(crazy)", "(gone sexual)", "(like and sub for free bobux)"]
                 
                 let contact1 = contactList1[Math.floor(Math.random()*(contactList1.length))]
                 if (contact1caps === true) {
@@ -103,7 +132,8 @@ export default class Clickbait extends Command {
             if (theme === challenge) {
                 let challengeList1 = ["buying", "selling", "eating", "stealing"]
                 let challengeList2 = ["everything in the store", "all of my parent's belongings", "everything I can hold", "everything green", "everything orange", "everything blue", "everything red"]
-                let challengeList3 = ["- challenge", "- super hard challenge", "- expensive challenge", "- impossible challenge"]
+                let challengeList3 = ["- challenge", "- super hard challenge", "- expensive challenge", "- impossible challenge", "- crazy challenge (almost died)"]
+                let challengeList4 = ["(intense)", "(near-death moments)", "(extremely dangerous)", "(nsfw)", "(crazy)", "(almost impossible)", "(gone sexual)", "(free giftcard giveaway in description)"]
                 
                 let challenge1 = challengeList1[Math.floor(Math.random()*(challengeList1.length))]
                 if (challenge1caps === true) {
@@ -117,8 +147,42 @@ export default class Clickbait extends Command {
                 if (challenge3caps === true) {
                     challenge3 = challenge3.toUpperCase()
                 }
+                let challenge4 = challengeList4[Math.floor(Math.random()*(challengeList3.length))]
+                if (challenge3caps === true) {
+                    challenge4 = challenge4.toUpperCase()
+                }
 
-                return `${challenge1} ${challenge2} ${challenge3}`
+                return `${challenge1} ${challenge2} ${challenge3} ${challenge4}`
+            }
+
+            if (theme === exposing) {
+                let expose = "exposing"
+                let exposeList1 = ["dream for", "george not found for", "antisynth for", "Joe Biden for", "your mom for", "my parents for"]
+                let exposeList2 = ["not letting me stay up past my bedtime", "saying h*ck", "calling me gay", "saying I'm dumb", "being toxic", "being cringe"]
+                let exposeList3 = ["- confirmed", "- screenshots", "- cringe"]
+                let exposeList4 = ["(nsfw)", "(almost got doxed)", "(bad words)", "(insane moments)", "(could've died)"]
+                
+                if (exposecaps === true) {
+                    expose = expose.toUpperCase()
+                }
+                let expose1 = exposeList1[Math.floor(Math.random()*(exposeList1.length))]
+                if (expose1caps === true) {
+                    expose1 = expose1.toUpperCase()
+                }
+                let expose2 = exposeList2[Math.floor(Math.random()*(exposeList2.length))]
+                if (expose2caps === true) {
+                    expose2 = expose2.toUpperCase()
+                }
+                let expose3 = exposeList3[Math.floor(Math.random()*(exposeList3.length))]
+                if (expose3caps === true) {
+                    expose3 = expose3.toUpperCase()
+                }
+                let expose4 = exposeList4[Math.floor(Math.random()*(exposeList4.length))]
+                if (expose4caps === true) {
+                    expose4 = expose4.toUpperCase()
+                }
+                
+                return `${expose} ${expose1} ${expose2} ${expose3} ${expose4}`
             }
         }
 

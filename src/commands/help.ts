@@ -44,18 +44,18 @@ export default class Help extends Command {
         } else {
             const util = new MessageEmbed()
             .setTitle('Utility')
-            .setDescription('Use !help <command> to get info on it')
-            .addField('!**avatar**', '_ _', true)
-            .addField('!**help**', '_ _', true)
-            .addField('!**id**', '_ _', true)
-            .addField('!**ping**', '_ _', true)
-            .addField('!**serverinfo**', '_ _', true)
-            .addField('!**userinfo**', '_ _', true)
+            .setDescription(`Use ${prefix}help <command> to get info on it`)
+            .addField(`${prefix}**avatar**`, '_ _', true)
+            .addField(`${prefix}**help**`, '_ _', true)
+            .addField(`${prefix}**id**`, '_ _', true)
+            .addField(`${prefix}**ping**`, '_ _', true)
+            .addField(`${prefix}**serverinfo**`, '_ _', true)
+            .addField(`${prefix}**userinfo**`, '_ _', true)
             .setTimestamp()
 
             const fun = new MessageEmbed()
             .setTitle('Fun')
-            .setDescription('Use !help <command> to get info on it')
+            .setDescription(`Use ${prefix}help <command> to get info on it`)
             .addFields(
                 {
                     name: `${prefix}**8ball**`,
