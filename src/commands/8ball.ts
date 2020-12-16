@@ -61,6 +61,7 @@ export default class _8ball extends Command {
             .setDescription(`Question: ${question}\nAnswer: ${random_index}`)
             .setImage(magic_8ball_image)
             .setFooter(`Requested by ${message.author.username}`, message_author_avatar)
+            .setTimestamp()
 
         return message.util.send(embed)
     }

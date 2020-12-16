@@ -42,6 +42,7 @@ export default class Avatar extends Command {
             .setTitle(`Avatar for ${user.user.username}`)
             .setImage(user.user.displayAvatarURL({ size: size as ImageSize }))
             .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
+            .setTimestamp()
         return message.util.send(embed)
     }
 }
