@@ -64,7 +64,7 @@ export default class Clickbait extends Command {
             const expose3caps = capsList[Math.floor(Math.random()*(capsList.length))]
             const expose4caps = capsList[Math.floor(Math.random()*(capsList.length))]
 
-            switch (usertheme) {
+            switch (usertheme.toUpperCase()) {
                 case 'GAMING':
                     theme = gaming
                     break
@@ -75,18 +75,6 @@ export default class Clickbait extends Command {
                     theme = challenge
                     break
                 case 'EXPOSE':
-                    theme = exposing
-                    break
-                case 'gaming':
-                    theme = gaming
-                    break
-                case 'contact':
-                    theme = contacting
-                    break
-                case 'challenge':
-                    theme = challenge
-                    break
-                case 'expose':
                     theme = exposing
                     break
                 default:
