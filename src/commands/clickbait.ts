@@ -64,23 +64,25 @@ export default class Clickbait extends Command {
             const expose3caps = capsList[Math.floor(Math.random()*(capsList.length))]
             const expose4caps = capsList[Math.floor(Math.random()*(capsList.length))]
 
-            switch (usertheme.toUpperCase()) {
-                case 'GAMING':
-                    theme = gaming
-                    break
-                case 'CONTACT':
-                    theme = contacting
-                    break
-                case 'CHALLENGE':
-                    theme = challenge
-                    break
-                case 'EXPOSE':
-                    theme = exposing
-                    break
-                default:
-                    theme = theme
-                    break
-            }
+            if (usertheme) {
+                switch (usertheme.toUpperCase()) {
+                    case 'GAMING':
+                        theme = gaming
+                        break
+                    case 'CONTACT':
+                        theme = contacting
+                        break
+                    case 'CHALLENGE':
+                        theme = challenge
+                        break
+                    case 'EXPOSE':
+                        theme = exposing
+                        break
+                    default:
+                        theme = theme
+                        break
+                }
+        }
 
             if (theme === gaming) {
                 let gamingList1 = ["beating", "winning against", "I got killed by", "I won with", "I won against", "I found a hacker with", "speedrunning with", "replicating minecraft manhunt against"]
