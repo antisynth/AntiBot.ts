@@ -43,7 +43,7 @@ export default class Clickbait extends Command {
         const capsList = [true, false]
 
         function generateClickbait() {
-            let theme = themeList[Math.floor(Math.random()*(themeList.length)-1)]
+            let theme = themeList[Math.floor(Math.random()*(themeList.length))]
             const gaming1caps = capsList[Math.floor(Math.random()*(capsList.length))]
             const gaming2caps = capsList[Math.floor(Math.random()*(capsList.length))]
             const gaming3caps = capsList[Math.floor(Math.random()*(capsList.length))]
