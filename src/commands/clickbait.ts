@@ -162,7 +162,7 @@ export default class Clickbait extends Command {
 
             if (theme === exposing) {
                 let expose = "exposing"
-                let exposeList1 = ["dream for", "george not found for", "antisynth for", "Joe Biden for", "your mom for", "my parents for"]
+                let exposeList1 = ["dream for", "george not found for", "antisynth for", "Joe Biden for", "your mom for", "my parents for", "bonk for"]
                 let exposeList2 = ["not letting me stay up past my bedtime", "saying h*ck", "calling me gay", "saying I'm dumb", "being toxic", "being cringe", "not eating their veggies", "stabbing wybels", "being bad"]
                 let exposeList3 = ["- confirmed", "- screenshots", "- cringe", "- video"]
                 let exposeList4 = ["(nsfw)", "(almost got doxed)", "(bad words)", "(insane moments)", "(could've died)"]
