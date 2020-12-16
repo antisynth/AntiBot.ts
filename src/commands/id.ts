@@ -31,6 +31,7 @@ export default class ID extends Command {
             .setAuthor(`${user.user.username}'s ID`, user.user.displayAvatarURL())
             .setDescription(user.user.id)
             .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
+            .setTimestamp()
         return message.util.send(embed)
     }
 }

@@ -50,6 +50,7 @@ export default class Gayrate extends Command {
             .setAuthor(`How gay is ${user.user.username}?`, user.user.displayAvatarURL())
             .setDescription(`${user.user.username} is ${how_gay}% gay! ${emoji}`)
             .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
+            .setTimestamp()
             .setImage(bar_image_link)
         return message.util.send(embed)
     }

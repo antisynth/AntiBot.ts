@@ -67,6 +67,7 @@ export default class UserInfo extends Command {
                 inline: true,
             }
         )
+        .setTimestamp()
         return message.util.send(embed)
     }
 }

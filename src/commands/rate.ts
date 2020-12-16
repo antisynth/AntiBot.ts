@@ -44,6 +44,7 @@ export default class Rate extends Command {
             .setAuthor(`${user.user.username}'s rating`, user.user.displayAvatarURL())
             .setDescription(`I rate ${user.user.username} ${rating}/5 stars\n\n${set_emojis}`)
             .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
+            .setTimestamp()
         return message.util.send(embed)
     }
 }

@@ -82,7 +82,7 @@ export default class Clickbait extends Command {
                         theme = theme
                         break
                 }
-        }
+            }
 
             if (theme === gaming) {
                 let gamingList1 = ["beating", "winning against", "I got killed by", "I won with", "I won against", "I found a hacker with", "speedrunning with", "replicating minecraft manhunt against"]

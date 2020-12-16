@@ -96,7 +96,9 @@ export default class Snake extends Command {
 
         const startEmbed = new MessageEmbed()
             .setAuthor(`Snake Game`, message.author.displayAvatarURL({ format: "png" }))
-            .setDescription(`Length: **${snakeLen}**\n${data.strBoard}`);
+            .setDescription(`Length: **${snakeLen}**\n${data.strBoard}`)
+            .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
+            .setTimestamp()
         const start = await message.channel.send("", { embed: startEmbed });
 
         const reactions = ["⬆️", "⬇️", "⬅️", "➡️", "❌"];
@@ -212,7 +214,9 @@ export default class Snake extends Command {
 
             const newEmbed = new MessageEmbed()
                 .setAuthor(`Snake Game`, message.author.displayAvatarURL({ format: "png" }))
-                .setDescription(`Length: **${snakeLen}**\n${newData.strBoard}`);
+                .setDescription(`Length: **${snakeLen}**\n${newData.strBoard}`)
+                .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
+                .setTimestamp();
             start.edit("", { embed: newEmbed });
         });
     }

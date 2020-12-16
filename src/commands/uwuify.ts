@@ -68,6 +68,7 @@ export default class UwUify extends Command {
             .setTitle('UwU-ified Message')
             .setDescription(`${UwUify(text)}`)
             .setFooter(`Wequested by ${message.author.username}`, message.author.displayAvatarURL())
+            .setTimestamp()
         return message.util.send(embed)
 
     }

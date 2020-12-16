@@ -40,6 +40,9 @@ export default class Help extends Command {
                 **Examples:**
                 ${command.description.examples ? command.description.examples.map(e => `\`${e}\``).join('\n') : "Unknown"}
             `)
+            .setTimestamp()
+            .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL()
+            )
             )
         } else {
             const util = new MessageEmbed()
@@ -51,6 +54,7 @@ export default class Help extends Command {
             .addField(`${prefix}**ping**`, '_ _', true)
             .addField(`${prefix}**serverinfo**`, '_ _', true)
             .addField(`${prefix}**userinfo**`, '_ _', true)
+            .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
             .setTimestamp()
 
             const fun = new MessageEmbed()
@@ -108,6 +112,7 @@ export default class Help extends Command {
                     inline: true
                 }
             )
+            .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
             .setTimestamp()
 
             const pages = [

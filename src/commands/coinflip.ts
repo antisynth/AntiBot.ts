@@ -29,6 +29,8 @@ export default class Coinflip extends Command {
                 const embed = new MessageEmbed()
                 .setTitle(headsOrTails)
                 .setImage(img)
+                .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
+                .setTimestamp()
 
                 result.edit('', { embed: embed })
             }, 1000)

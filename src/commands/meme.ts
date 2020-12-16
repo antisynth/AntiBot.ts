@@ -27,6 +27,7 @@ export default class Meme extends Command {
         
         const loadingEmbed = new MessageEmbed()
             .setTitle('Loading...')
+            .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
             .setTimestamp()
 
         const dislikeEmbed = new MessageEmbed()

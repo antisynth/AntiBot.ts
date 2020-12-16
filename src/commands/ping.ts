@@ -24,7 +24,8 @@ export default class Ping extends Command {
             .setTitle('Ping')
             .setDescription(`:ping_pong: Pong!\nClient latency: ${ping}ms\nAPI latency: ${this.client.ws.ping}ms`)
             .setFooter(`Requested by ${message.author.username}`, message_author_avatar)
-            
+            .setTimestamp()
+
             m.edit('', { embed: embed })
         })
     }

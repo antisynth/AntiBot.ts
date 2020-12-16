@@ -80,7 +80,8 @@ export default class Connect4 extends Command {
 
             const initial = new MessageEmbed()
                 .setTitle(`${gameData[player].member.user.username}'s turn`)
-                .setDescription(initialState);
+                .setDescription(initialState)
+                .setTimestamp();
             
             const gameMessage = await message.channel.send(initial);
 
@@ -215,6 +216,7 @@ export default class Connect4 extends Command {
 
                         const TieEmbed = new MessageEmbed()
                             .setDescription(renderBoard(board))
+                            .setTimestamp()
                         gameCollector.stop("Tie Game");
                         return gameMessage.edit(`It was a tie game!`, { embed: TieEmbed });
 
@@ -227,6 +229,7 @@ export default class Connect4 extends Command {
 
                             const WinEmbed = new MessageEmbed()
                                 .setDescription(renderBoard(board))
+                                .setTimestamp()
                             gameCollector.stop(`${gameData[player].member.id} won`);
                             return gameMessage.edit(`${gameData[player].member} has won the game!`, { embed: WinEmbed });
 
@@ -239,6 +242,7 @@ export default class Connect4 extends Command {
                     const newEmbed = new MessageEmbed()
                         .setTitle(`${gameData[player].member.user.username}'s turn`)
                         .setDescription(renderBoard(board))
+                        .setTimestamp()
                     gameMessage.edit("", { embed: newEmbed });
 
                 }

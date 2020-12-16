@@ -52,6 +52,7 @@ export default class ServerInfo extends Command {
             .addField('Total voice channel count', `${message.guild.channels.cache.filter(m => m.type === 'voice').size}`, true)
             .addField('Member count', `${message.guild.memberCount}`, true)
             .addField('Role count (excluding @everyone)', `${roles - 1}`, true)
+            .setTimestamp()
         return message.util.send(embed)
     }
 }
