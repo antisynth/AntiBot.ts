@@ -32,11 +32,11 @@ export default class Help extends Command {
             .setAuthor(`Help with ${command}`, this.client.user.displayAvatarURL())
             .setDescription(stripIndents`
                 **Aliases:**
-                ${command.aliases.join().replace(/,/g, ', ') || "Unknown"}
+                ${prefix}${command.aliases.join().replace(/,/g, ', ') || "Unknown"}
                 **Description:**
                 ${command.description.content || "Unknown"}
                 **Usage:**
-                ${command.description.usage || "Unknown"}
+                ${prefix}${command.description.usage || "Unknown"}
                 **Examples:**
                 ${command.description.examples ? command.description.examples.map(e => `\`${e}\``).join('\n') : "Unknown"}
             `)
@@ -68,6 +68,11 @@ export default class Help extends Command {
                 },
                 {
                     name: `${prefix}**clickbait**`,
+                    value: '_ _',
+                    inline: true
+                },
+                {
+                    name: `${prefix}**clyde**`,
                     value: '_ _',
                     inline: true
                 },
