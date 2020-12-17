@@ -6,6 +6,7 @@
     "dependencies": {
         "@types/dotenv": "^8.2.0",
         "@types/node": "^14.14.10",
+        "axios": "^0.21.0",
         "canvas": "^2.6.1",
         "discord-akairo": "^8.1.0",
         "discord.js": "^12.5.1",
