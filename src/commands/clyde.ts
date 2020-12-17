@@ -14,12 +14,13 @@ export default class Clyde extends Command {
                     'fakeclyde pog'
                 ]
             },
+            ratelimit: 0,
             args: [
                 {
                     id: 'text',
                     type: 'string',
                     match: 'rest'
-                },
+                }
             ]
         })
     }
