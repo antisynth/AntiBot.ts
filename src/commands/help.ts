@@ -49,6 +49,7 @@ export default class Help extends Command {
             .setTitle('Utility')
             .setDescription(`Use ${prefix}help <command> to get info on it`)
             .addField(`${prefix}**avatar**`, '_ _', true)
+            .addField(`${prefix}**docs**`, '_ _', true)
             .addField(`${prefix}**help**`, '_ _', true)
             .addField(`${prefix}**id**`, '_ _', true)
             .addField(`${prefix}**ping**`, '_ _', true)

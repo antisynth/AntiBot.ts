@@ -26,11 +26,11 @@ export default class Clyde extends Command {
     }
 
     public exec(message: Message, { text }: { text: string }) {
-        if (!text) return message.channel.send('Please provide some text')
+        if (!text) return message.util.send('Please provide some text')
         axios
         .get(`https://nekobot.xyz/api/imagegen?type=clyde&text=${text}`)
         .then((res) => {
-            message.channel.send('', {
+            message.util.send('', {
                 files: [
                     {
                         attachment: res.data.message
