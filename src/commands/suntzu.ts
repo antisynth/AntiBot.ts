@@ -50,43 +50,43 @@ export default class SunTzu extends Command {
         x = canvas.width / 2 - ctx.measureText(text).width / 2
         if (text.length > 30) {
             text = [...text]
-            text[36] = text[36] + '\n'
+            text[32] = text[32] + '\n'
         }
         if (text.length > 60) {
             text = [...text]
-            text[66] = text[66] + '\n'
+            text[62] = text[62] + '\n'
         }
         if (text.length > 90) {
             text = [...text]
-            text[96] = text[96] + '\n'
+            text[92] = text[92] + '\n'
         }
         if (text.length > 120) {
             text = [...text]
-            text[126] = text[126] + '\n'
+            text[122] = text[122] + '\n'
         }
         if (text.length > 150) {
             text = [...text]
-            text[156] = text[156] + '\n'
+            text[152] = text[152] + '\n'
         }
         if (text.length > 180) {
             text = [...text]
-            text[186] = text[186] + '\n'
+            text[182] = text[182] + '\n'
         }
         if (text.length > 210) {
             text = [...text]
-            text[216] = text[216] + '\n'
+            text[212] = text[212] + '\n'
         }
         if (text.length > 240) {
             text = [...text]
-            text[246] = text[246] + '\n'
+            text[242] = text[242] + '\n'
         }
         if (text.length > 270) {
             text = [...text]
-            text[276] = text[276] + '\n'
+            text[272] = text[272] + '\n'
         }
         if (text.length > 300) {
             text = [...text]
-            text[306] = text[306] + '\n'
+            text[302] = text[302] + '\n'
         }
         let newText = Array.prototype.join.call(text, "")
         if (quotes == "TRUE") { 
