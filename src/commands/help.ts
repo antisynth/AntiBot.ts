@@ -46,7 +46,7 @@ export default class Help extends Command {
             )
         } else {
             const util = new MessageEmbed()
-            .setTitle('Utility')
+            .setTitle('🛠️ Utility')
             .setDescription(`Use ${prefix}help <command> to get info on it`)
             .addField(`${prefix}**avatar**`, '_ _', true)
             .addField(`${prefix}**docs**`, '_ _', true)
@@ -59,7 +59,7 @@ export default class Help extends Command {
             .setTimestamp()
 
             const fun = new MessageEmbed()
-            .setTitle('Fun')
+            .setTitle('🤪 Fun')
             .setDescription(`Use ${prefix}help <command> to get info on it`)
             .addFields(
                 {
