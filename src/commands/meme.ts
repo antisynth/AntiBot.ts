@@ -30,10 +30,6 @@ export default class Meme extends Command {
             .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
             .setTimestamp()
 
-        const dislikeEmbed = new MessageEmbed()
-            .setTitle('I won\'t show you this image again, sorry you hated it!')
-            .setTimestamp()
-
         const msg = await message.channel.send('', { embed: loadingEmbed })
 
         setTimeout(async () => {
@@ -57,8 +53,8 @@ export default class Meme extends Command {
             this.client.on('messageReactionAdd', async (reaction) => {
                 if (reaction.emoji.name === '👎') {
                     if (reaction.count >= 5) {
-                        msg.edit('', { embed: dislikeEmbed })
                         msg.reactions.removeAll()
+                        msg.delete()
                         const fsPromises = fs.promises
                         const data = JSON.parse(await fsPromises.readFile('./files/db.json', 'utf8'))
                         data[image] = true
