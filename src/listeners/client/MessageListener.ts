@@ -1,5 +1,7 @@
 import { Listener } from 'discord-akairo';
 import { Message } from 'discord.js';
+import { client } from '../../Bot'
+import { prefix } from '../../Config'
 
 export default class MessageListener extends Listener {
     public constructor() {
@@ -11,6 +13,8 @@ export default class MessageListener extends Listener {
     }
 
     public exec(message: Message) {
-        
+        if (message.content === `<@!${client.user.id}>` || message.content === `<@${client.user.id}>`) {
+            return message.channel.send(`My prefix is "${prefix}"!`)
+        }
     }
 }
