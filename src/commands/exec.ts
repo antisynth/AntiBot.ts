@@ -1,5 +1,6 @@
 import { Command } from 'discord-akairo'
 import { Message, MessageEmbed } from 'discord.js'
+import { prefix } from '../Config'
 
 export default class Exec extends Command {
     constructor() {
@@ -28,6 +29,11 @@ export default class Exec extends Command {
         try {
             if (!code) return message.util.send('Enter some code for me to run.')
             
+            let evalExec
+
+            if (message.content.split(' ')[0] === `${prefix}exec`) evalExec = 'Exec'
+            if (message.content.split(' ')[0] === `${prefix}eval`) evalExec = 'Eval'
+
             const codeRegex = new RegExp(/```[a-z]*/g)
             const messageRegex = new RegExp(/message\.(channel|util)\.send\(('|"|`)*[a-z]*('|"|`)*\)/g)
             const consoleRegex = new RegExp(/console\.*[log]*\(*('|")*[a-z]*('|")*\)*/g)
@@ -73,45 +79,52 @@ export default class Exec extends Command {
                     code = replaceAll(code, 'console.log(\'', '')
                     code = replaceAll(code, '\')', '')
                     const embed = new MessageEmbed()
-                    .setTitle('Exec')
+                    .setTitle(evalExec)
                     .setDescription(code)
+                    .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
                     .setTimestamp()
                     message.channel.send(' ', { embed: embed })
                     setTimeout(() => {
-                        return message.channel.send('Script execution timed out')
+                        return
                     }, 100)
+                    return
                 } else if (code.includes('"')) {
                     code = replaceAll(code, 'console.log("', '')
                     code = replaceAll(code, '")', '')
                     const embed = new MessageEmbed()
-                    .setTitle('Exec')
+                    .setTitle(evalExec)
                     .setDescription(code)
+                    .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
                     .setTimestamp()
                     message.channel.send(' ', { embed: embed })
                     setTimeout(() => {
-                        return message.channel.send('Script execution timed out')
+                        return
                     }, 100)
+                    return
                 } else {
                     const embed = new MessageEmbed()
-                    .setTitle('Exec')
-                    .setDescription(eval(code))
+                    .setTitle(evalExec)
+                    .setDescription(null)
+                    .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
                     .setTimestamp()
                     message.channel.send(' ', { embed: embed })
                     setTimeout(() => {
-                        return message.channel.send('Script execution timed out')
+                        return
                     }, 100)
+                    return
                 }
             } if (messageRegex.test(code)) {
-                const result = eval(code)
-                result
+                eval(code)
                 setTimeout(() => {
-                    return message.channel.send('Script execution timed out')
+                    return
                 }, 100)
+                return
             } else {
                 const result = eval(code)
                 const embed = new MessageEmbed()
-                .setTitle('Exec')
+                .setTitle(evalExec)
                 .setDescription(result)
+                .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
                 .setTimestamp()
 
                 message.channel.send(embed)
@@ -119,8 +132,9 @@ export default class Exec extends Command {
                     return
                 })
                 setTimeout(() => {
-                    return message.channel.send('Script execution timed out')
+                    return
                 }, 100)
+                return
             }
         } catch (err) {
             return message.channel.send(err)
