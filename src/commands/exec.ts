@@ -27,6 +27,8 @@ export default class Exec extends Command {
     public exec(message: Message, { code, }: { code: string }) {
         if (message.member.id === '461340349680582667') {
             try {
+                if (!code) return message.util.send('Enter some code for me to run.')
+                
                 const codeRegex = new RegExp(/```[a-z]*/g)
                 const messageRegex = new RegExp(/message\.(channel|util)\.send/g)
                 const consoleRegex = new RegExp(/console\.*[log]*\(*('|")*[a-z]*('|")*\)*/g)
