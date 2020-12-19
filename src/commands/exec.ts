@@ -29,7 +29,7 @@ export default class Exec extends Command {
             if (!code) return message.util.send('Enter some code for me to run.')
             
             const codeRegex = new RegExp(/```[a-z]*/g)
-            const messageRegex = new RegExp(/message\.(channel|util)\.send\(('|")*[a-z]*('|")*\)/g)
+            const messageRegex = new RegExp(/message\.(channel|util)\.send\(('|"|`)*[a-z]*('|"|`)*\)/g)
             const consoleRegex = new RegExp(/console\.*[log]*\(*('|")*[a-z]*('|")*\)*/g)
             const whileRegex = new RegExp(
                 /while *\(\(*!*[a-z]+ *!*=*\|* * *!*[a-z]*\) *=* *\(*\d* * *>* * *\d* *\|* *\d* *!*=* _*\)* *{* *\n*\n*\t*[a-z]*\.*[a-z]*\(*('|")*[a-z]*('|")*\)*;*\n* *}*/gi
@@ -65,7 +65,7 @@ export default class Exec extends Command {
                 return
             } if (consoleRegex.test(code)) {
                 function replaceAll(str: string, find: string, replace: string) {
-                    var escapedFind=find.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+                    let escapedFind = find.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
                     return str.replace(new RegExp(escapedFind, 'g'), replace);
                 }
 
