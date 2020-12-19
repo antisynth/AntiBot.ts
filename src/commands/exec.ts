@@ -79,7 +79,7 @@ export default class Exec extends Command {
                     .setTimestamp()
                     message.channel.send(' ', { embed: embed })
                     setTimeout(() => {
-                        return
+                        return message.channel.send('Script execution timed out')
                     }, 100)
                 } else if (code.includes('"')) {
                     code = replaceAll(code, 'console.log("', '')
@@ -90,7 +90,7 @@ export default class Exec extends Command {
                     .setTimestamp()
                     message.channel.send(' ', { embed: embed })
                     setTimeout(() => {
-                        return
+                        return message.channel.send('Script execution timed out')
                     }, 100)
                 } else {
                     const embed = new MessageEmbed()
@@ -99,14 +99,14 @@ export default class Exec extends Command {
                     .setTimestamp()
                     message.channel.send(' ', { embed: embed })
                     setTimeout(() => {
-                        return
+                        return message.channel.send('Script execution timed out')
                     }, 100)
                 }
             } if (messageRegex.test(code)) {
                 const result = eval(code)
                 result
                 setTimeout(() => {
-                    return
+                    return message.channel.send('Script execution timed out')
                 }, 100)
             } else {
                 const result = eval(code)
@@ -120,7 +120,7 @@ export default class Exec extends Command {
                     return
                 })
                 setTimeout(() => {
-                    return
+                    return message.channel.send('Script execution timed out')
                 }, 100)
             }
         } catch (err) {
