@@ -30,32 +30,21 @@ export default class Exec extends Command {
                 const codeRegex = new RegExp(/```[a-z]*/g)
                 const messageRegex = new RegExp(/message\.(channel|util)\.send/g)
                 const consoleRegex = new RegExp(/console\.*[log]*\(*('|")*[a-z]*('|")*\)*/g)
-                const emptyMessageRegex = new RegExp(/[a-z]*/g)
                 const whileRegex = new RegExp(
                     /while *\([a-z]+\) *{* *\n*\n*\t*[a-z]*\.*[a-z]*\(*('|")*[a-z]*('|")*\)*\n* *}*/gi
                 )
 
                 if (whileRegex.test(code)) {
                     return message.util.send('That seems like a bad idea.')
-                }
-
-                if (emptyMessageRegex.test(code)) {
-                    return
-                }
-
-                if (codeRegex.test(code)) {
+                } else if (codeRegex.test(code)) {
                     code = code.replace(/```[a-z]*/g, '')
-                }
-
-                if (consoleRegex.test(code)) {
+                } else if (consoleRegex.test(code)) {
                     const result = eval(code)
                     result
                     return message.util.send('Logged to console')
-                }
-
-                if (messageRegex.test(code)) {
-                    const result = eval(code)
-                    return result
+                } else if (messageRegex.test(code)) {
+                        const result = eval(code)
+                        return result
                 } else {
                     const result = eval(code)
                     const embed = new MessageEmbed()
@@ -63,7 +52,7 @@ export default class Exec extends Command {
                     .setDescription(result)
                     .setTimestamp()
 
-                    return message.util.send(embed)
+                    return message.util.send('', { embed: embed })
                     .catch(err => {
                         return message.util.send(err)
                     })
