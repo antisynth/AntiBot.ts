@@ -1,4 +1,3 @@
-import { freetypeVersion } from 'canvas'
 import { Command } from 'discord-akairo'
 import { Message, MessageEmbed } from 'discord.js'
 
