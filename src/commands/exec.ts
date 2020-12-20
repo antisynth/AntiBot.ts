@@ -49,6 +49,9 @@ export default class Exec extends Command {
             const intervalTimeoutRegex = new RegExp(
                 /(setTimeout|setInterval)\(*/g
             )
+            const pingRegex = new RegExp(
+                /@/g
+            )
             const count = (
                 code.match(/message\.(channel|util)\.send\(('|"|`)*[a-z]*('|"|`)*\)/g) || code.match(/console\.*[log]*\(*('|"|`)*[a-z]*('|"|`)*\)/g) || []
             ).length
@@ -59,7 +62,9 @@ export default class Exec extends Command {
                 return
             }
 
-            if (codeRegex.test(code)) {
+            if (pingRegex.test(code)) {
+                code = code.replace(/@/, '')
+            } if (codeRegex.test(code)) {
                 code = code.replace(/```[a-z]*/g, '')
             } if (intervalTimeoutRegex.test(code)) {
                 return 
