@@ -86,7 +86,7 @@ export default class Clickbait extends Command {
 
             if (theme === gaming) {
                 let gamingList1 = ["beating", "winning against", "I got killed by", "I won with", "I won against", "I found a hacker with", "speedrunning with", "replicating minecraft manhunt against"]
-                let gamingList2 = ["the best player ever", "a famous youtuber", "the president", "an asian gamer", "your fat fucking mom"]
+                let gamingList2 = ["the best player ever", "a famous youtuber", "the president", "an asian gamer", "your mom"]
                 let gamingList3 = ["in Minecraft!", "in Overwatch!", "in Call of Duty!", "in Roblox!", "in Fortnite!"]
                 let gamingList4 = ["(intense)", "(ultra gamer)", "(so close)", "(omg)", "(pro)", "(gone sexual)", "(watch until the end)"]
 
@@ -164,8 +164,8 @@ export default class Clickbait extends Command {
 
             if (theme === exposing) {
                 let expose = "exposing"
-                let exposeList1 = ["dream for", "george not found for", "antisynth for", "Joe Biden for", "your mom for", "my parents for", "bonk for"]
-                let exposeList2 = ["not letting me stay up past my bedtime", "saying h*ck", "calling me gay", "saying I'm dumb", "being toxic", "being cringe", "not eating their veggies", "stabbing wybels", "being bad"]
+                let exposeList1 = ["dream for", "george not found for", "antisynth for", "Joe Biden for", "your mom for", "my parents for", "joe for"]
+                let exposeList2 = ["not letting me stay up past my bedtime", "saying h*ck", "calling me gay", "saying I'm dumb", "being toxic", "being cringe", "not eating their veggies", "being bad"]
                 let exposeList3 = ["- confirmed", "- screenshots", "- cringe", "- video"]
                 let exposeList4 = ["(nsfw)", "(almost got doxed)", "(bad words)", "(insane moments)", "(could've died)"]
                 
