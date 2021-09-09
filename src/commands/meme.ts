@@ -21,7 +21,7 @@ export default class Meme extends Command {
     }
 
     public async exec(message: Message) {
-        const subreddits = ["meme", "me_irl", "photoshopbattles", "crappyoffbrands", "PerfectTiming", "BrandNewSentence"]
+        const subreddits = ["meme", "me_irl", "photoshopbattles", "crappyoffbrands", "BrandNewSentence"]
         const random = subreddits[Math.floor(Math.random() * subreddits.length)]
         let image = await random_puppy(random)
         
