@@ -116,6 +116,11 @@ export default class Help extends Command {
                     name: `${prefix}**uwuify**`,
                     value: '_ _',
                     inline: true
+                },
+                {
+                    name: `${prefix}**clown**`,
+                    value: '_ _',
+                    inline: true
                 }
             )
             .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL())
