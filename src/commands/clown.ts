@@ -14,7 +14,8 @@ export default class Clown extends Command {
                 examples: [
                     'clown antisynth',
                     'clown @antisynth#6968',
-                    'omfgclown antisynth'
+                    'omfgclown antisynth',
+                    'clown antisynth -TRICKY=true'
                 ]
             },
             ratelimit: 0,
