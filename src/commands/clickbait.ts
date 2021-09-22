@@ -10,7 +10,12 @@ export default class Clickbait extends Command {
                 usage: 'clickbait',
                 examples: [
                     'clickbait',
-                    'shitpost'
+                    'shitpost',
+                    'clickbait -theme=expose',
+                    'shitpost -theme=expose',
+                    'clickbait -theme=gaming',
+                    'clickbait -theme=contact',
+                    'clickbait -theme=challenge'
                 ]
             },
             ratelimit: 0,
@@ -19,7 +24,7 @@ export default class Clickbait extends Command {
                     id: 'usertheme',
                     type: 'string',
                     match: 'option',
-                    flag: ['-THEME='],
+                    flag: ['-theme='],
                     default: null
                 }
             ]

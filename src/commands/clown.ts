@@ -30,7 +30,7 @@ export default class Clown extends Command {
                     id: 'tricky',
                     type: 'string',
                     match: 'option',
-                    flag: '-TRICKY=',
+                    flag: '-tricky=',
                     default: 'FALSE'
                 }
             ]
